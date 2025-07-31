@@ -41,7 +41,8 @@ jobs:
           pip wheel ta-lib --no-deps -w dist
 
       - name: Upload artefact
-        uses: actions/upload-artifact@v3
+        # Use v4 of upload-artifact, v3 is deprecated
+        uses: actions/upload-artifact@v4
         with:
           name: wheels-${{ matrix.python-version }}
           path: dist\*.whl
